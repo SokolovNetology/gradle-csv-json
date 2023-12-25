@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+
         String[] columnMapping = {"id", "firstName", "lastName", "country", "age"};
         String fileName = "data.csv";
         List<Employee> list = parseCSV(columnMapping, fileName);
@@ -15,18 +16,19 @@ public class Main {
 
     public static List<Employee> parseCSV(String[] columnMapping, String fileName) throws IOException {
 
-        try (CSVReader reader = new CSVReader(new FileReader("data.csv"))) {
-            String[] nextLine;
-            while ((nextLine = reader.readNext()) != null) {
-                // Работаем с прочитанными данными.
-                System.out.println(Arrays.toString(nextLine));
-            } }catch (IOException e){
-                e.printStackTrace();
-
-            }
-          return list;
+        try (CSVReader reader = new CSVReader(new FileReader(fileName))) {
+            ColumnPositionMappingStrategy<Employee> strategy = new ColumnPositionMappingStrategy<>();
+            strategy.setType(Employee.class);
+            strategy.setColumnMapping(columnMapping);
+            CsvToBean<Employee> csv = new CsvToBeanBuilder<Employee>(csvReader)
+                    .withMappingStrategy(strategy)
+                    .build();
+            return csv.parse();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        return null;
+    }
 
     }
 
-}
