@@ -14,7 +14,7 @@ public class Main {
     }
 
     public static List<Employee> parseCSV(String[] columnMapping, String fileName) throws IOException {
-        List<Employee> list = new ArrayList<>();
+
         try (CSVReader reader = new CSVReader(new FileReader("data.csv"))) {
             String[] nextLine;
             while ((nextLine = reader.readNext()) != null) {
