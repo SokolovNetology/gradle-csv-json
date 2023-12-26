@@ -1,5 +1,6 @@
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
@@ -10,6 +11,7 @@ public class Main {
         String fileName = "data.csv";
         List<Employee> list = parseCSV(columnMapping, fileName);
         String json = listToJson(list);
+
     }
 
     public static List<Employee> parseCSV(String[] columnMapping, String fileName) throws IOException {
@@ -18,7 +20,7 @@ public class Main {
             ColumnPositionMappingStrategy<Employee> strategy = new ColumnPositionMappingStrategy<>();
             strategy.setType(Employee.class);
             strategy.setColumnMapping(columnMapping);
-            CsvToBean<Employee> csv = new CsvToBeanBuilder<Employee>(csvReader)
+            CsvToBean<Employee> csv = new CsvToBeanBuilder<Employee>(reader)
                     .withMappingStrategy(strategy)
                     .build();
             return csv.parse();
@@ -28,11 +30,20 @@ public class Main {
         return null;
     }
 
-       public static <T> String listToJson(List<Employee>List<T> list){
-           GsonBuilder builder = new GsonBuilder();
-           Gson gson = builder.create();
-           Type listType = new TypeToken<List<T>>() {}.getType();
-    }get.Type();
-         return gson.toJson(list,listType);
+    public static <T> String listToJson(List<T> list) {
+        GsonBuilder builder = new GsonBuilder();
+        Gson gson = builder.create();
+        Type listType = new TypeToken<List<T>>() {
+        }.getType();
+        return gson.toJson(list, listType);
     }
+         public static void writeString(String json,String fileName){
+          try(FileWriter file = new FileWriter(fileName)){
+              file.write(json);
+              file.flush();
 
+          }catch (Exception e){
+              e.printStackTrace();
+          }
+         }
+}
