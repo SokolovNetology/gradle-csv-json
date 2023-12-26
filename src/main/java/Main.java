@@ -1,8 +1,6 @@
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -11,7 +9,7 @@ public class Main {
         String[] columnMapping = {"id", "firstName", "lastName", "country", "age"};
         String fileName = "data.csv";
         List<Employee> list = parseCSV(columnMapping, fileName);
-
+        String json = listToJson(list);
     }
 
     public static List<Employee> parseCSV(String[] columnMapping, String fileName) throws IOException {
@@ -30,5 +28,11 @@ public class Main {
         return null;
     }
 
+       public static <T> String listToJson(List<Employee>List<T> list){
+           GsonBuilder builder = new GsonBuilder();
+           Gson gson = builder.create();
+           Type listType = new TypeToken<List<T>>() {}.getType();
+    }get.Type();
+         return gson.toJson(list,listType);
     }
 

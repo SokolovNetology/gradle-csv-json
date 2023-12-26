@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e4a42aa3-b1d4-477e-b9f8-75a3a70601dc" name="Changes" comment="gradle-csv-json">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +60,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;RainbowCSV.Settings&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.Gradle-csv-json [test]">
+  <component name="RunManager" selected="Gradle.Gradle-csv-json [dependencies]">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Gradle-csv-json.main" />
@@ -130,9 +131,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Gradle-csv-json [dependencies]" />
         <item itemvalue="Gradle.Gradle-csv-json [test]" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Gradle.Gradle-csv-json [dependencies]" />
         <item itemvalue="Gradle.Gradle-csv-json" />
       </list>
     </recent_temporary>
@@ -174,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703498020550</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="gradle-csv-json">
+      <created>1703502138081</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703502138081</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UnknownFeatures">
