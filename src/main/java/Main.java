@@ -62,15 +62,16 @@ public class Main {
                  DocumentBuilder builder = factory.newDocumentBuilder();
                  Document doc = builder.parse(new File("data.xml"));
                  Node root = doc.getDocumentElement();
-                 System.out.println("Корневой узел: " + root.getNodeName());
-                 NodeList nodeList = root.getChildNodes();
+                 //System.out.println("Корневой узел: " + root.getNodeName());
+                 NodeList nodeList = root.getChildNodes()//список элементов
                  for (int i=0;i< nodeList.getLenth;i++){
                      Node node = nodeList.item(i);
-                     System.out.println("Teкyщий элeмeнт: " + node.getNodeName());
+                     //System.out.println("Teкyщий элeмeнт: " + node.getNodeName());
                  }
                  if(Node.ELEMENT_NODE == node.getNodeType()){
                     Element  employee = (Element) node;
                  }
+                 return xml.parse;
              }
          }
 }
