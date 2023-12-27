@@ -5,6 +5,8 @@ import com.opencsv.*;
 import com.opencsv.bean.ColumnPositionMappingStrategy;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -16,13 +18,15 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         String[] columnMapping = {"id", "firstName", "lastName", "country", "age"};
-        String fileName = "data.csv";
+        String fileName1 = "data.csv";
         List<Employee> list = parseCSV(columnMapping, fileName);
         String json = listToJson(list);
+        String fileName2 = "data.xml";
+        List<Employee> list = parseXML("data.xml");
 
     }
 
-    public static List<Employee> parseCSV(String[] columnMapping, String fileName) throws IOException {
+    public static List<Employee> parseCSV(String[] columnMapping, String fileName1) throws IOException {
 
         try (CSVReader reader = new CSVReader(new FileReader(fileName))) {
             ColumnPositionMappingStrategy<Employee> strategy = new ColumnPositionMappingStrategy<>();
@@ -53,5 +57,20 @@ public class Main {
           }catch (Exception e){
               e.printStackTrace();
           }
+          public static List<Employee> parseXML(String[] columnMapping,String fileName2){
+                 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+                 DocumentBuilder builder = factory.newDocumentBuilder();
+                 Document doc = builder.parse(new File("data.xml"));
+                 Node root = doc.getDocumentElement();
+                 System.out.println("Корневой узел: " + root.getNodeName());
+                 NodeList nodeList = root.getChildNodes();
+                 for (int i=0;i< nodeList.getLenth;i++){
+                     Node node = nodeList.item(i);
+                     System.out.println("Teкyщий элeмeнт: " + node.getNodeName());
+                 }
+                 if(Node.ELEMENT_NODE == node.getNodeType()){
+                    Element  employee = (Element) node;
+                 }
+             }
          }
 }
