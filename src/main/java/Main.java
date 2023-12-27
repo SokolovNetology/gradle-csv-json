@@ -25,6 +25,7 @@ public class Main {
         String json = listToJson(list);
         String fileName2 = "data.xml";
         List<Employee> list = parseXML(fileName2);
+
     }
 
     public static List<Employee> parseCSV(String [] columnMapping1, String fileName2) throws IOException {
