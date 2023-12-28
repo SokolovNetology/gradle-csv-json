@@ -20,17 +20,18 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         String[] columnMapping = {"id", "firstName", "lastName", "country", "age"};
-        String fileName1 = "data.csv";
+        String fileName1 = "data/data.csv";
         List<Employee> list = parseCSV(columnMapping, fileName1);
-        String json = listToJson(list);
+       String json = listToJson(list);
+       writeString(json,"data/data.json");
         String fileName2 = "data.xml";
-        List<Employee> list = parseXML(fileName2);
+        List<Employee> list1 = parseXML(fileName2);
 
     }
 
-    public static List<Employee> parseCSV(String [] columnMapping1, String fileName2) throws IOException {
+    public static List<Employee> parseCSV(String [] columnMapping, String fileName) throws IOException {
 
-        try (CSVReader reader = new CSVReader(new FileReader(fileName1))) {
+        try (CSVReader reader = new CSVReader(new FileReader(fileName))) {
             ColumnPositionMappingStrategy<Employee> strategy = new ColumnPositionMappingStrategy<>();
             strategy.setType(Employee.class);
             strategy.setColumnMapping(columnMapping);
@@ -43,7 +44,7 @@ public class Main {
         }
         return null;
     }
-
+//
     public static <T> String listToJson(List<T> list) {
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
@@ -51,7 +52,7 @@ public class Main {
         }.getType();
         return gson.toJson(list, listType);
     }
-
+//
     public static void writeString(String json, String fileName) {
         try (FileWriter file = new FileWriter(fileName)) {
             file.write(json);
@@ -62,22 +63,27 @@ public class Main {
         }
     }
 
-    private static List<Employee> parseXML(String fileName) throws ParserConfigurationException, IOException, SAXException {
+    public static List<Employee> parseXML(String fileName) throws ParserConfigurationException, IOException, SAXException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse(new File(fileName));
+
         Node root = doc.getDocumentElement();
         NodeList nodeList = root.getChildNodes();
-        for (int i = 0; i < nodeList.getLenth(); i++) {
+
+        List<Employee> list = new ArrayList<>();
+
+        for (int i = 0; i < nodeList.getLength(); i++) {
             Node node = nodeList.item(i);
-            Element employee = (Element) node;
-            Employee employee = new Employee();
-            employee.id = Long.parseLong(element.getElementsByTagName("id").item(0).getTextContent());
-            employee.firstName = element.getElementsByTagName("firstName").item(0).getTextContent();
-            employee.lastName = element.getElementsByTagName("lastName").item(0).getTextContent();
-            employee.country = element.getElementsByTagName("country").item(0).getTextContent();
-            employee.age = Integer.parseInt(element.getElementsByTagName("age").item(0).getTextContent());
-            list.add(employee);
+            if (Node.ELEMENT_NODE == node.getNodeType()) {
+                Element element = (Element) node;
+                Employee employee = new Employee(Integer.parseInt(element.getElementsByTagName("id").item(0).getTextContent()),
+                        element.getElementsByTagName("firstName").item(0).getTextContent(),
+                        element.getElementsByTagName("lastName").item(0).getTextContent(),
+                        element.getElementsByTagName("country").item(0).getTextContent(),
+                        Integer.parseInt(element.getElementsByTagName("age").item(0).getTextContent()));
+                list.add(employee);
+            }
         }
         return list;
     }

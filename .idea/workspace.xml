@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4a42aa3-b1d4-477e-b9f8-75a3a70601dc" name="Changes" comment="gradle-csv-json">
+    <list default="true" id="e4a42aa3-b1d4-477e-b9f8-75a3a70601dc" name="Changes" comment="gradle-csv-json(file)">
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +112,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2Xd92PospT6EONStnBFbZkOaSob" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -121,7 +125,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/sokol/Gradle-csv-json/src/main/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Documents and Settings&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sokol/Gradle-csv-json/data&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -132,8 +136,11 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sokol\Gradle-csv-json\data" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Gradle.Gradle-csv-json">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Gradle-csv-json.main" />
@@ -204,10 +211,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Gradle-csv-json" />
         <item itemvalue="Gradle.Gradle-csv-json [dependencies]" />
         <item itemvalue="Gradle.Gradle-csv-json [test]" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Gradle.Gradle-csv-json" />
       </list>
     </recent_temporary>
   </component>
@@ -304,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703684185602</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="gradle-csv-json(file)">
+      <created>1703685231028</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1703685231028</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -324,6 +338,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Gradle-csv-json" />
     <MESSAGE value="gradle-csv-json" />
-    <option name="LAST_COMMIT_MESSAGE" value="gradle-csv-json" />
+    <MESSAGE value="gradle-csv-json(file)" />
+    <option name="LAST_COMMIT_MESSAGE" value="gradle-csv-json(file)" />
   </component>
 </project>
